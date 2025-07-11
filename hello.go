@@ -8,7 +8,7 @@ func main(){
 
 	fmt.Println(SequentialSearch(arr, 6))
 
-	fmt.Println(BinarySearch(arr, 1))
+	fmt.Println(BinarySearch(arr, 33))
 }
 
 
@@ -38,26 +38,19 @@ func SequentialSearch(arr[] int, value int) bool {
 }
 
 // TODO => NOT COMPLETED
-func BinarySearch(arr[] int, value int) bool{
-	var j int
+func BinarySearch(arr[] int, target int) bool{
+
 	low := 0
-	high := len(arr) - 1
-	mid := (int)(low + (low + high)/2)
-	fmt.Println(mid)
+	high := len(arr)
 
-
-	for j = 0; j < high; j++ {
-	 	if value == arr[mid]   {
-	 		break
+	for low < high{
+		mid := (int)(low + (high -  low)/2)
+		value := arr[mid]
+		if value == target {
 			return true
-			if value > arr[mid]{
-				low = mid
-			}else{
-				high = mid - 1
-			}
-	 	}
+		}else if value > target{
+			high = mid
+		}else {low = mid + 1 }
 	}
 	return false
-
-
 }
