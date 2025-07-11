@@ -41,18 +41,23 @@ func SequentialSearch(arr[] int, value int) bool {
 func BinarySearch(arr[] int, value int) bool{
 	var j int
 	low := 0
-	high := len(arr)
-	mid := low + (low + high)/2
+	high := len(arr) - 1
+	mid := (int)(low + (low + high)/2)
+	fmt.Println(mid)
+
 
 	for j = 0; j < high; j++ {
-		if arr[mid] == value {
+	 	if value == arr[mid]   {
+	 		break
 			return true
-		} else if value > arr[mid]{
-			low = mid
-		}else {
-			high = mid + 1
-		}
+			if value > arr[mid]{
+				low = mid
+			}else{
+				high = mid - 1
+			}
+	 	}
 	}
 	return false
+
 
 }
