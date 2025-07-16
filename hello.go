@@ -42,7 +42,7 @@ func BinarySearch(arr[] int, value int) bool{
 	var j int
 	low := 0
 	high := len(arr)
-	mid := low + (low + high)/2
+	mid := int(low + (low + high)/2)
 
 	for j = 0; j < high; j++ {
 		if arr[mid] == value {
