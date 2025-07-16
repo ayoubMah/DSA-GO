@@ -1,4 +1,4 @@
-package main
+package search
 
 func BinarySearch(arr[] int, target int) bool{
 

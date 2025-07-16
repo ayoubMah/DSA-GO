@@ -1,4 +1,4 @@
-package main
+package search
 
 func SequentialSearch(arr[] int, value int) bool {
 
